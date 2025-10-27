@@ -1,131 +1,259 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>𝙋𝙀𝘼𝙆𝙔 𝘽𝙇𝙄𝙉𝘿𝙀𝙍 𝙈𝘿 𝙋𝙊𝙍𝙏𝘼𝙇</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0da6e4c.js" crossorigin="anonymous"></script>
   <style>
-    body {
-      background-color: black;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+    :root {
+      --primary: #00ffee;
+      --accent1: #ff00cc;
+      --accent2: #00ff99;
+      --accent3: #6600ff;
+      --accent4: #ffcc00;
+      --bg-dark: #0a0a0a;
+      --glass: rgba(255, 255, 255, 0.07);
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      color: white;
+      padding: 0;
     }
 
-    {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "url": "https://railway.app",
-            "logo": "https://files.catbox.moe/39z8jd.jpg"
-    }
-
-    .button-container {
-      text-align: center;
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #111);
+      color: var(--primary);
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      min-height: 100vh;
+      padding: 0;
+      margin: 0;
     }
 
-    h3 {
-      margin-top: -40px;
-      opacity: 0;
-      animation: fadeIn 3s forwards;
+    .sidebar {
+      width: 240px;
+      background: linear-gradient(180deg, var(--accent1), var(--accent2), var(--accent3), var(--accent4));
+      padding: 20px;
+      min-height: 100vh;
+      box-shadow: 0 0 30px var(--accent1);
+      position: sticky;
+      top: 0;
+      border-radius: 15px;
     }
 
-    .button {
-      width: 140px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 0px 15px;
-      background-color: red;
-      border-radius: 10px;
-      border: none;
+    .sidebar h2 {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px var(--accent3);
+      font-size: 2.2rem;
+      font-weight: 600;
+    }
+
+    .nav-link {
+      display: block;
+      margin: 15px 0;
+      padding: 12px;
       color: white;
-      position: relative;
-      cursor: pointer;
-      font-weight: 900;
-      transition-duration: .2s;
-      background: linear-gradient(0deg, #000, #272727);
+      background: var(--glass);
+      border-left: 6px solid transparent;
+      transition: 0.3s;
       text-decoration: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
     }
 
-  
-    footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #222; /* Darker gray footer background */
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    font-size: 14px;
+    .nav-link:hover {
+      border-left: 6px solid var(--primary);
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateX(8px);
+      box-shadow: 0 0 15px var(--accent4);
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 40px;
+      background: linear-gradient(135deg, #111, #1a1a1a);
+      animation: bgShift 12s infinite alternate;
+      border-radius: 20px;
+      box-shadow: 0 0 20px var(--accent2);
+    }
+
+    @keyframes bgShift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.2rem;
+      margin-bottom: 20px;
+      color: var(--accent1);
+      text-shadow: 0 0 25px var(--accent2);
+      font-weight: 700;
+    }
+
+    .section {
+      margin-bottom: 40px;
+      padding: 20px;
+      border-radius: 20px;
+      border: 1px solid var(--primary);
+      box-shadow: 0 0 25px var(--accent4);
+    }
+
+    .access-section {
+      background: linear-gradient(135deg, #ff00cc, #00ffee);
+    }
+
+    .deploy-section {
+      background: linear-gradient(135deg, #6600ff, #ffcc00);
+    }
+
+    .dev-section {
+      background: linear-gradient(135deg, #00ff99, #ff00cc);
+    }
+
+    .section h3 {
+      font-size: 2rem;
+      color: var(--accent3);
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .btn-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+    }
+
+    .btn {
+      background: linear-gradient(145deg, var(--accent1), var(--accent4));
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 12px var(--accent1);
+    }
+
+    .btn:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 0 18px var(--accent2);
+    }
+
+    .footer {
+      margin-top: 60px;
+      text-align: center;
+      opacity: 0.7;
+      font-size: 1.1rem;
+      color: var(--accent2);
+    }
+
+    .status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      font-size: 1.2rem;
+      color: var(--accent3);
+      border-top: 1px solid var(--accent4);
+      border-bottom: 1px solid var(--accent4);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .status-bar .time,
+    .status-bar .date,
+    .status-bar .battery {
+      padding: 0 10px;
+    }
+
+    .battery-icon {
+      margin-right: 5px;
+    }
+    .logo {
+       text-align: left;
+       margin-bottom: 20px;
+      
+    }
+
+    .logo img {
+      width: 80px;        /* Adjust size as needed */
+      height: auto;
+      border-radius: 100%; /* Makes it round — remove if not desired */
+      box-shadow: 0 0 15px var(--accent4);
+    }
     
-  }
-    .button:before, .button:after {
-      content: '';
-      position: absolute;
-      left: -2px;
-      top: -2px;
-      border-radius: 10px;
-      background: linear-gradient(45deg, #48ff00, #15ff00, #000000,#000000, #ff0000);
-      background-size: 400%;
-      width: calc(100% + 4px);
-      height: calc(100% + 4px);
-      z-index: -1;
-      animation: steam 10s linear infinite;
-    }
-
-    @keyframes steam {
-      0% {
-        background-position: 0 0;
-      }
-
-      50% {
-        background-position: 400% 0;
-      }
-
-      100% {
-        background-position: 0 0;
-      }
-    }
-
-    .button:after {
-      filter: blur(50px);
-    }
-
-    .button span {
-      z-index: 1;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
   </style>
 </head>
 <body>
-  <div class="button-container">
-    <h3> PEAKY-BLINDER-MD SESSION</h3>
-    <div></div>
-    <a href="/qr" class="button" target="_blank"> <span>QR-CODE</span> </a> <br>
-    <a href="/pair" class="button" target="_blank"> <span>PAIRING-CODE</span> </a> <br>
-    <a href="https://github.com/Thomas-shelby001/PEAKY-BLINDER-MD/fork" class="button" target="_blank"> <span>FORK PEAKY BLINDER</span> </a> <br> </a>
-    <a href="https://whatsapp.com/channel/0029VbAuEfj29754YgFtRf33" class="button" target="_blank"> <span>WhatsApp</span> </a> <br>
-
-    <p>HAVE ANY ERROR CLICK ERROR BUTTON</p>
-
-    <a href="https://wa.me/254116266407" class="button" target="_blank"> <span>ERROR</span> </a> <br>
-
-    <footer>
-     Sang Lee &copy; <span id="currentYear"></span>
-    </footer>
+  <div class="sidebar">
+  <div class="logo">
+    <img src="https://files.catbox.moe/2857dd.jpg" alt="Portal Logo">
+    </div>
+  <h2>𝙋𝙀𝘼𝙆𝙔 𝘽𝙇𝙄𝙉𝘿𝙀𝙍 𝙈𝘿</h2>
+    <a href="#access" class="nav-link"><i class="fas fa-key"></i> Access</a>
+    <a href="#dev" class="nav-link"><i class="fas fa-user-astronaut"></i> Developer</a>
   
+  </div>
+
+  <div class="main-content">
+    <h1>𝙋𝙀𝘼𝙆𝙔 𝘽𝙇𝙄𝙉𝘿𝙀𝙍 𝙈𝘿 𝙋𝙊𝙍𝙏𝘼𝙇</h1>
+
+    <div class="status-bar">
+      <div class="time" id="time"></div>
+      <div class="date" id="date"></div>
+      <div class="battery" id="battery-status">
+        <i class="fas fa-battery-full battery-icon"></i>
+      </div>
+    </div>
+
+    <div class="section access-section" id="access">
+      <h3>Get Session ID </h3>
+      <div class="btn-grid">
+        <button class="btn" onclick="window.open('/qr')">QR Code</button>
+        <button class="btn" onclick="window.open('/pair')">Pair Code</button>
+      </div>
+    </div>
+
+
+    <div class="section dev-section" id="dev">
+      <h3>Developer & Community</h3>
+      <div class="btn-grid">
+        <button class="btn" onclick="window.open('https://github.com/Thomas-shelby001')">GitHub</button>
+        <button class="btn" onclick="window.open('https://wa.me/254116266407')">WhatsApp</button>
+      </div>
+    </div>
+
+    <div class="footer">Made with passion & style by Sang Lee
+    <br>By Order of the Peaky blinders 🎩</div>
+  </div>
+
+  <script>
+    function updateTime() {
+      const time = new Date();
+      document.getElementById('time').textContent = time.toLocaleTimeString();
+      document.getElementById('date').textContent = time.toLocaleDateString();
+    }
+
+    function updateBatteryStatus() {
+      navigator.getBattery().then(function(battery) {
+        let batteryLevel = Math.round(battery.level * 100) + '%';
+        let charging = battery.charging ? 'Charging' : 'Discharging';
+        document.getElementById('battery-status').textContent = `${batteryLevel} | ${charging}`;
+      });
+    }
+
+    setInterval(updateTime, 1000);
+    updateBatteryStatus();
+  </script>
 </body>
 </html>
