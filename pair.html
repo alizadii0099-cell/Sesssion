@@ -1,242 +1,182 @@
-<!DOCTYPE html><html lang="en"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sang Lee PAIR CODE</title>
-  <link rel="stylesheet" href="css/all.min.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>PEAKY-BLINDER-MD</title>
   <style>
     body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://files.catbox.moe/2nknoj.jpg');
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      margin: 0;
-      background-image: url("https://files.catbox.moe/pr2rj5.jpg"); /* Set the background image */
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      font-family: Arial, sans-serif;
+      overflow: hidden;
     }
-
+    
     .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .box {
-      width: 300px;
-      height: 330px;
-      padding: 20px;
-      position: relative;
+      background: #111;
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 350px;
+      width: 90%;
+      box-shadow: 0 0 25px red;
       text-align: center;
-      background-color: rgba(255,255,255,0.5);
-      border-radius: 10px;
-      transform: perspective(1000px) rotateY(0deg);
-      box-shadow: none; /* Removed box shadow */
-      position: relative;
     }
 
-    #text {
-      color: #000; /* Set the text color to black (#000) */
+    .title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: red;
+      text-shadow: 0 0 10px red;
     }
 
-    .input-container input {
-      color: #000; /* Set the text color to black (#000) */
+    .emoji {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.5rem;
     }
 
-    .centered-text {
-      color: #000; /* Set the text color to black (#000) */
+    .subtext {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-bottom: 1.5rem;
     }
 
     .input-container {
       display: flex;
-      background: white;
-      border-radius: 1rem;
-      background: linear-gradient(45deg, #c5c5c5 0%, #ffffff 100%);
-      padding: 0.3rem;
-      gap: 0.3rem;
-      max-width: 300px; /* Set your desired maximum width */
-      width: 100%;
+      flex-direction: row;
+      gap: 0.5rem;
     }
 
-    .input-container input {
-      border-radius: 0.8rem 0 0 0.8rem;
-      background: #e8e8e8;
-      width: 89%;
-      flex-basis: 75%;
-      padding: 1rem;
+    input {
+      flex: 1;
+      padding: 0.8rem;
+      border-radius: 10px;
       border: none;
-      border-left: 2px solid #ff9d9d;
-      color: #5e5e5e;
-      transition: all 0.2s ease-in-out;
-    }
-
-    .input-container input:focus {
-      border-left: 2px solid #ff9d9d;
       outline: none;
+      background: #e8e8e8;
+      color: #000;
+      font-weight: bold;
+      font-size: 1rem;
     }
 
-    .input-container button {
-      flex-basis: 25%;
-      padding: 1rem;
-      background: linear-gradient(135deg, #8a2be2 0%, #800080 100%); /* Purple background */
-      font-weight: 900;
-      letter-spacing: 0.3rem;
-      text-transform: uppercase;
+    button {
+      padding: 0.8rem 1rem;
+      border-radius: 10px;
+      border: 2px solid gold;
+      background: #000;
       color: white;
-      border: none;
-      width: 100%;
-      border-radius: 0 1rem 1rem 0;
-      transition: all 0.2s ease-in-out;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
     }
 
-    .input-container button:hover {
-      background: linear-gradient(135deg, #A8E4A0 0%, #32CD32 100%);
-      color: red; /* Change text color on hover to red */
+    button:hover {
+      background: blue;
+      border-color: green;
+    }
+
+    #pair {
+      margin-top: 1.5rem;
+      font-size: 1rem;
+    }
+
+    #copy {
+      cursor: pointer;
     }
 
     @media (max-width: 500px) {
       .input-container {
         flex-direction: column;
       }
-
-      .input-container input {
-        border-radius: 0.8rem;
-      }
-
-      .input-container button {
-        padding: 1rem;
-        border-radius: 0.8rem;
-      }
     }
-
-    .centered-text {
-      text-align: center;
-    }
-    
-    /* Glowing Text */
-    .glowing-text {
-      margin-top: 20px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: white;
-      text-shadow: 
-        0 0 5px #FF0000, 
-        0 0 10px #FF0000, 
-        0 0 15px #FF4500, 
-        0 0 20px #FF4500, 
-        0 0 25px #FF6347, 
-        0 0 30px #FF6347;
-      animation: glow 2s infinite;
-    }
-
-    @keyframes glow {
-      0% {
-        text-shadow: 
-          0 0 5px #FF0000, 
-          0 0 10px #FF0000, 
-          0 0 15px #FF4500, 
-          0 0 20px #FF4500, 
-          0 0 25px #FF6347, 
-          0 0 30px #FF6347;
-      }
-      50% {
-        text-shadow: 
-          0 0 5px #32CD32, 
-          0 0 10px #32CD32, 
-          0 0 15px #32CD32, 
-          0 0 20px #7CFC00, 
-          0 0 25px #ADFF2F, 
-          0 0 30px #ADFF2F;
-      }
-      100% {
-        text-shadow: 
-          0 0 5px #1E90FF, 
-          0 0 10px #1E90FF, 
-          0 0 15px #00BFFF, 
-          0 0 20px #00BFFF, 
-          0 0 25px #87CEFA, 
-          0 0 30px #87CEFA;
-      }
-    }    
- 
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="main">
-      <div class="box" id="box">
-        <div id="text">
-          <i class="fa fa-user"></i>
-          <p>
-            <h2 class="centered-text">PEAKY-BLINDER-MD PAIR</h2>           
-            <h6>⚙Enter your number with country code.⚙</h6>
-            <div class="input-container">
-              <input placeholder="2547XX" type="number" id="number" placeholder="⚙enter your phone number with country code⚙" name="">
-              <button id="submit">enter</button>
-            </div>
-           
-            <a id="waiting-message" class="centered-text" style="display: none;">in process...</a>
-            <br>
-            <br>
-            <main id="pair"></main>
-          <p></p>
-        </div>
-      </div>
+    <div class="emoji">🎩</div>
+    <div class="title">PEAKY-BLINDER-MD PAIR</div>
+    <div class="subtext">👨‍💻 Made by <strong>Sang Lee</strong></div>
+    <div class="subtext">📲 ᴇɴᴛᴇʀ ʏᴏᴜʀ ᴡʜᴀᴛsᴀᴘᴘ ɴᴜᴍʙᴇʀ ᴡɪᴛʜ ᴄᴏᴜɴᴛʀʏ ᴄᴏᴅᴇ(e.g., <strong>2547xxxxxx</strong>)</div>
+    
+    <div class="input-container">
+      <input placeholder="2547xxxxxx" type="number" id="number">
+      <button id="submit">Send</button>
     </div>
-    <div class="glowing-text">Powered By Sang Lee</div>
+
+    <div id="pair"></div>
   </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
   <script>
     let a = document.getElementById("pair");
     let b = document.getElementById("submit");
     let c = document.getElementById("number");
-    let box = document.getElementById("box");
 
     async function Copy() {
-      let text = document.getElementById("copy").innerText;
       let obj = document.getElementById("copy");
-      await navigator.clipboard.writeText(obj.innerText.replace('CODE: ', ''));
-      obj.innerText = "COPIED";
-      obj.style = "color:blue;font-weight:bold";
-      obj.size = "5";
+      let text = obj.innerText;
+      await navigator.clipboard.writeText(text.replace('CODE: ', ''));
+      obj.innerText = "✅ COPIED";
+      obj.style = "color:lime;font-weight:bold";
       setTimeout(() => {
         obj.innerText = text;
-        obj.style = "color:black;font-weight-bold";
-        obj.size = "5";
-      }, 500);
+        obj.style = "color:red;font-weight:bold";
+      }, 1000);
     }
 
     b.addEventListener("click", async (e) => {
       e.preventDefault();
-      if (!c.value) {
-        a.innerHTML = '<a style="color:black;font-weight:bold">❗Enter your whatsapp number with country code.</a><br><br>';
-      } else if (c.value.replace(/[^0-9]/g, "").length < 11) {
-        a.innerHTML = '<a style="color:black;font-weight:bold">❌Invalid number format❌</a><br><br>';
-      } else {
-        const bc = c.value.replace(/[^0-9]/g, "");
-        let bb = "";
-        let bbc = "";
-        const cc = bc.split('');
-        cc.map(a => {
-          bbc += a;
-          if (bbc.length == 3) {
-            bb += " " + a;
-          } else if (bbc.length == 8) {
-            bb += " " + a;
-          } else {
-            bb += a;
-          }
-        });
-        c.type = "text";
-        c.value = "+" + bb;
-        c.style = "color:black;font-size:20px";
-        a.innerHTML = '<a style="color:black;font-weight:bold">Please wait🔎 </a><br><br>';
-        let { data } = await axios(`/code?number=${bc}`);
-        let code = data.code || "Service Unavailable";
-        a.innerHTML = '<font id="copy" onclick="Copy()" style="color:red;font-weight:bold" size="5">CODE: <span style="color:black;font-weight:bold">' + code + '</span></font><br><br><br>';
+      const raw = c.value;
+      if (!raw) {
+        a.innerHTML = '<div style="color:white;font-weight:bold">⚠️ Enter your WhatsApp number</div>';
+        return;
       }
+      if (raw.replace(/[^0-9]/g, "").length < 11) {
+        a.innerHTML = '<div style="color:orange;font-weight:bold">❌ Invalid Number</div>';
+        return;
+      }
+      const phone = raw.replace(/[^0-9]/g, "");
+      let display = "", buffer = "";
+      phone.split('').forEach((d, i) => {
+        buffer += d;
+        if (buffer.length === 3 || buffer.length === 8) display += " ";
+        display += d;
+      });
+      c.type = "text";
+      c.value = "+" + display;
+      c.style = "color:black;font-size:18px";
+
+      a.innerHTML = '<div style="color:white;font-weight:bold">⏳ Please wait...</div>';
+
+      let { data } = await axios(`/code?number=${phone}`);
+      let code = data.code || "Unavailable";
+
+      a.innerHTML = `<div id="copy" onclick="Copy()" style="color:red;font-weight:bold">🔐 CODE: <span style="color:white">${code}</span></div>`;
     });
+
+    function createMatrix() {
+      const container = document.querySelector('.matrix');
+      const columns = Math.floor(window.innerWidth / 20);
+      for (let i = 0; i < columns; i++) {
+        const col = document.createElement('div');
+        col.style.left = `${i * 20}px`;
+        col.style.animationDuration = `${Math.random() * 5 + 2}s`;
+        container.appendChild(col);
+        for (let j = 0; j < 30; j++) {
+          const char = document.createElement('span');
+          char.innerText = String.fromCharCode(0x30A0 + Math.random() * 96);
+          col.appendChild(char);
+        }
+      }
+    }
+
+    createMatrix();
   </script>
 </body>
 </html>
