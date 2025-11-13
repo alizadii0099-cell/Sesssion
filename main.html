@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,7 +74,7 @@
     .main-content {
       flex: 1;
       padding: 40px;
-      background: linear-gradient(135deg, #111, #1a1a1a);
+      background-color: grey;
       animation: bgShift 12s infinite alternate;
       border-radius: 20px;
       box-shadow: 0 0 20px var(--accent2);
@@ -91,7 +89,7 @@
       font-family: 'Poppins', sans-serif;
       font-size: 3.2rem;
       margin-bottom: 20px;
-      color: var(--accent1);
+      color: blue;
       text-shadow: 0 0 25px var(--accent2);
       font-weight: 700;
     }
@@ -104,17 +102,6 @@
       box-shadow: 0 0 25px var(--accent4);
     }
 
-    .access-section {
-      background: linear-gradient(135deg, #ff00cc, #00ffee);
-    }
-
-    .deploy-section {
-      background: linear-gradient(135deg, #6600ff, #ffcc00);
-    }
-
-    .dev-section {
-      background: linear-gradient(135deg, #00ff99, #ff00cc);
-    }
 
     .section h3 {
       font-size: 2rem;
@@ -130,7 +117,7 @@
     }
 
     .btn {
-      background: linear-gradient(145deg, var(--accent1), var(--accent4));
+      background-color: black;
       color: white;
       padding: 14px;
       border: none;
@@ -152,7 +139,7 @@
       text-align: center;
       opacity: 0.7;
       font-size: 1.1rem;
-      color: var(--accent2);
+      color: blue;
     }
 
     .status-bar {
@@ -186,26 +173,21 @@
     .logo img {
       width: 80px;        /* Adjust size as needed */
       height: auto;
-      border-radius: 100%; /* Makes it round — remove if not desired */
+      border-radius: 150%; /* Makes it round — remove if not desired */
       box-shadow: 0 0 15px var(--accent4);
     }
     
   </style>
-</head>
-<body>
-  <div class="sidebar">
-  <div class="logo">
-    <img src="https://files.catbox.moe/2857dd.jpg" alt="Portal Logo">
-    </div>
-  <h2>𝙋𝙀𝘼𝙆𝙔 𝘽𝙇𝙄𝙉𝘿𝙀𝙍 𝙈𝘿</h2>
-    <a href="#access" class="nav-link"><i class="fas fa-key"></i> Access</a>
-    <a href="#dev" class="nav-link"><i class="fas fa-user-astronaut"></i> Developer</a>
-  
-  </div>
+
+
 
   <div class="main-content">
-    <h1>𝙋𝙀𝘼𝙆𝙔 𝘽𝙇𝙄𝙉𝘿𝙀𝙍 𝙈𝘿 𝙋𝙊𝙍𝙏𝘼𝙇</h1>
+    
+    <div class="logo"><img src="https://files.catbox.moe/2857dd.jpg"></div>
 
+    <h1>𝙋𝙀𝘼𝙆𝙔 𝘽𝙇𝙄𝙉𝘿𝙀𝙍 𝙈𝘿 𝙋𝙊𝙍𝙏𝘼𝙇</h1>
+    
+    
     <div class="status-bar">
       <div class="time" id="time"></div>
       <div class="date" id="date"></div>
